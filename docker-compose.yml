@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  web:
+    image: django
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - redis
+      - react
+  celery:
+    image: celery
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.celery
+    depends_on:
+      - redis
+  redis:
+    image: redis
+  react:
+    image: react
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+
