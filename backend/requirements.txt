@@ -1,0 +1,15 @@
+Celery
+Django
+django-celery-beat 
+django-celery-results
+python-decouple
+redis
+flake8
+black
+djangorestframework
+python-dotenv
+pre-commit
+pytest 
+pytest-django
+drf-spectacular
+
